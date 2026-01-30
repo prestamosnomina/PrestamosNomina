@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamos Nómina - Créditos Rápidos y Confiables</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3d3d3d;
+            --primary-dark: #2a2a2a;
+            --accent: #98d84a;
+            --accent-dark: #7bc234;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-light: #ffffff;
+            --bg-gray: #f8f8f8;
+            --white: #ffffff;
+            --shadow: rgba(61, 61, 61, 0.1);
+            --border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--primary);
+            z-index: 1000;
+            padding: 0.8rem 5%;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.6s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text .top {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #c4c4c4;
+            letter-spacing: 2px;
+        }
+
+        .logo-text .bottom {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text .bottom .accent-letter {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .logo-text .bottom .accent-letter::after {
+            content: '↑';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .logo-text .underline {
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(152, 216, 74, 0.15) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+        }
+
+        .hero .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h1 .accent {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary-dark);
+            box-shadow: 0 10px 30px rgba(152, 216, 74, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(152, 216, 74, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease 0.8s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
+            animation: floatCard 6s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-card h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 6rem 5%;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .section-title h2 .accent {
+            color: var(--accent);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .steps-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            border: 2px solid var(--border);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin: 0 auto 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 10px 30px rgba(152, 216, 74, 0.3);
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Requirements Section */
+        .requirements {
+            padding: 6rem 5%;
+            background: var(--bg-gray);
+        }
+
+        .requirements-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .requirement-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 5px 20px var(--shadow);
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .requirement-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .requirement-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .requirement-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .requirement-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            background: var(--white);
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .partnership {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 5%;
+            background: var(--bg-gray);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--accent);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--accent);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 2rem 1.5rem;
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            padding: 6rem 5%;
+            background: var(--white);
+        }
+
+        .mv-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .mv-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--shadow);
+            position: relative;
+            border-left: 5px solid var(--accent);
+            transition: transform 0.3s ease;
+            border: 2px solid var(--border);
+        }
+
+        .mv-card:hover {
+            transform: translateX(10px);
+            border-color: var(--accent);
+        }
+
+        .mv-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .mv-card p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 6rem 5%;
+            background: var(--bg-gray);
+        }
+
+        .team-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+            font-weight: 700;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 30px var(--shadow);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .team-member h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .team-member .position {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-member p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(152, 216, 74, 0.2) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        footer .social-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: var(--white);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 85px;
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px var(--shadow);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            font-weight: 600;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                margin-top: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mv-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-text">
+                    <span class="top">PRÉSTAMOS</span>
+                    <span class="bottom">N<span class="accent-letter">Ó</span>MINA</span>
+                    <div class="underline"></div>
+                </div>
+            </div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#como-funciona">Cómo Funciona</a></li>
+                <li><a href="#requisitos">Requisitos</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tu Préstamo de <span class="accent">Nómina</span> en Minutos</h1>
+                <p>Soluciones financieras rápidas, seguras y diseñadas para ti. Sin complicaciones, sin esperas largas.</p>
+                <div class="cta-buttons">
+                    <a href="javascript:void(0);" onclick="openWhatsApp()" class="btn btn-primary">Solicitar Ahora</a>
+                    <a href="#como-funciona" class="btn btn-secondary">Conoce Más</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <h3>¿Por qué elegirnos?</h3>
+                    <div class="feature-item">
+                        <div class="check-icon">✓</div>
+                        <span>Aprobación rápida con Consupago</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">✓</div>
+                        <span>Tasas competitivas y transparentes</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">✓</div>
+                        <span>Proceso 100% digital</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">✓</div>
+                        <span>Atención personalizada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="como-funciona">
+        <div class="section-title">
+            <h2>¿Cómo <span class="accent">Funciona?</span></h2>
+            <p>Obtén tu préstamo en solo 4 pasos simples</p>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-icon">📱</div>
+                <div class="step-number">1</div>
+                <h3>Contacta</h3>
+                <p>Envíanos un mensaje por WhatsApp o llámanos. Nuestro equipo te atenderá de inmediato.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">📄</div>
+                <div class="step-number">2</div>
+                <h3>Envía Documentos</h3>
+                <p>Comparte tu identificación y comprobante de nómina. Todo de forma digital y segura.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">✅</div>
+                <div class="step-number">3</div>
+                <h3>Aprobación</h3>
+                <p>Evaluamos tu solicitud rápidamente con el respaldo de Consupago. Respuesta en horas.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">💵</div>
+                <div class="step-number">4</div>
+                <h3>Recibe tu Dinero</h3>
+                <p>Transferencia directa a tu cuenta. El dinero estará disponible de inmediato.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="requirements" id="requisitos">
+        <div class="section-title">
+            <h2>Requisitos <span class="accent">Mínimos</span></h2>
+            <p>Lo que necesitas para solicitar tu préstamo</p>
+        </div>
+        <div class="requirements-grid">
+            <div class="requirement-card">
+                <div class="requirement-icon">👤</div>
+                <div class="requirement-content">
+                    <h3>Identificación Oficial</h3>
+                    <p>INE/IFE vigente por ambos lados. Asegúrate de que sea legible y esté actualizada.</p>
+                </div>
+            </div>
+            <div class="requirement-card">
+                <div class="requirement-icon">💼</div>
+                <div class="requirement-content">
+                    <h3>Comprobante de Nómina</h3>
+                    <p>Recibo de nómina reciente (último mes). Debe mostrar tu ingreso mensual actual.</p>
+                </div>
+            </div>
+            <div class="requirement-card">
+                <div class="requirement-icon">🏦</div>
+                <div class="requirement-content">
+                    <h3>Estado de Cuenta</h3>
+                    <p>Últimos 3 meses de tu cuenta bancaria donde recibes tu nómina.</p>
+                </div>
+            </div>
+            <div class="requirement-card">
+                <div class="requirement-icon">📍</div>
+                <div class="requirement-content">
+                    <h3>Comprobante de Domicilio</h3>
+                    <p>Recibo de luz, agua o teléfono no mayor a 3 meses de antigüedad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="beneficios">
+        <div class="section-title">
+            <h2>Nuestros <span class="accent">Beneficios</span></h2>
+            <p>Diseñados pensando en tu bienestar financiero</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Proceso Rápido</h3>
+                <p>Recibe una respuesta rápida gracias a nuestro vínculo con Consupago. Sabemos que tu tiempo es valioso y trabajamos para darte una solución inmediata.</p>
+                <div class="partnership">🤝 En colaboración con Consupago</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Seguridad Total</h3>
+                <p>Tus datos están protegidos con la más alta tecnología de encriptación. Tu información personal siempre estará segura con nosotros.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Tasas Competitivas</h3>
+                <p>Ofrecemos las mejores tasas del mercado sin comisiones ocultas. Transparencia total en cada paso del proceso.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>100% Digital</h3>
+                <p>Todo el proceso desde tu celular o computadora. Sin necesidad de visitas presenciales ni largos trámites burocráticos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Atención Personalizada</h3>
+                <p>Un asesor dedicado te acompañará en cada paso. Estamos aquí para resolver todas tus dudas y ayudarte a tomar la mejor decisión.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Flexibilidad de Pago</h3>
+                <p>Planes de pago adaptados a tus necesidades y capacidad. Diseñamos opciones que se ajusten a tu presupuesto mensual.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="section-title">
+            <h2>Preguntas <span class="accent">Frecuentes</span></h2>
+            <p>Resolvemos tus dudas más comunes</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto tiempo tarda la aprobación?</div>
+                <div class="faq-answer">
+                    Gracias a nuestra colaboración con Consupago, el proceso de aprobación es muy rápido. Una vez que envíes todos tus documentos completos, recibirás una respuesta en un plazo de 24 a 48 horas. En casos urgentes, podemos acelerar el proceso aún más.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué montos puedo solicitar?</div>
+                <div class="faq-answer">
+                    Los montos varían según tu capacidad de pago y historial crediticio. Generalmente ofrecemos préstamos desde $5,000 hasta $150,000 pesos. Nuestros asesores te ayudarán a determinar el monto ideal para ti basándose en tus ingresos mensuales.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Necesito aval o garantía?</div>
+                <div class="faq-answer">
+                    En la mayoría de los casos no se requiere aval ni garantía. Tu nómina funciona como respaldo del préstamo. Sin embargo, para montos muy altos o situaciones especiales, podríamos solicitarte un aval, pero te lo informaremos desde el inicio del proceso.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo liquidar antes de tiempo?</div>
+                <div class="faq-answer">
+                    ¡Por supuesto! No cobramos penalización por pago anticipado. Si decides liquidar tu préstamo antes del plazo acordado, solo pagarás los intereses generados hasta ese momento. Incluso te beneficiarás con un ahorro en intereses.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo se realizan los pagos?</div>
+                <div class="faq-answer">
+                    Los pagos se descuentan automáticamente de tu nómina según el plan acordado. Esto hace que sea muy cómodo y no tengas que preocuparte por fechas de pago. También puedes hacer pagos adicionales cuando quieras para reducir el saldo.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué pasa si estoy en Buró de Crédito?</div>
+                <div class="faq-answer">
+                    Revisamos cada caso de manera individual. Estar en Buró de Crédito no significa un rechazo automático. Analizamos tu situación actual, capacidad de pago y otros factores. Contáctanos para evaluar tu caso particular.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision" id="nosotros">
+        <div class="section-title">
+            <h2>Nuestra <span class="accent">Esencia</span></h2>
+            <p>Lo que nos impulsa cada día</p>
+        </div>
+        <div class="mv-container">
+            <div class="mv-card">
+                <h3>Misión</h3>
+                <p>Brindar soluciones financieras accesibles, rápidas y confiables a trabajadores en México, facilitando el acceso a créditos de nómina con procesos transparentes y un servicio excepcional. Nuestro compromiso es ser el aliado financiero que impulsa el bienestar económico de nuestros clientes, ofreciendo productos adaptados a sus necesidades y con el respaldo de un equipo profesional dedicado a su éxito.</p>
+            </div>
+            <div class="mv-card">
+                <h3>Visión</h3>
+                <p>Convertirnos en la plataforma líder de préstamos de nómina en México, reconocidos por nuestra innovación tecnológica, rapidez en la aprobación y compromiso con la inclusión financiera. Aspiramos a transformar la experiencia del crédito, haciéndola más humana, accesible y transparente para todos los trabajadores del país, construyendo relaciones de confianza a largo plazo con nuestros clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="equipo">
+        <div class="section-title">
+            <h2>Nuestro <span class="accent">Equipo</span></h2>
+            <p>Profesionales comprometidos con tu bienestar financiero</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">AM</div>
+                <h4>Ana Martínez</h4>
+                <div class="position">Directora General</div>
+                <p>Con más de 15 años de experiencia en el sector financiero, Ana lidera nuestra visión de hacer el crédito accesible para todos.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">CG</div>
+                <h4>Carlos González</h4>
+                <div class="position">Director de Operaciones</div>
+                <p>Experto en optimización de procesos, Carlos asegura que cada solicitud sea procesada con la máxima eficiencia.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">MR</div>
+                <h4>María Rodríguez</h4>
+                <div class="position">Gerente de Atención al Cliente</div>
+                <p>María y su equipo están dedicados a brindar el mejor servicio y resolver todas tus inquietudes con calidez humana.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">JL</div>
+                <h4>Jorge López</h4>
+                <div class="position">Director de Tecnología</div>
+                <p>Jorge garantiza que nuestra plataforma sea segura, rápida y fácil de usar, implementando las últimas tecnologías.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contacto">
+        <h2>¿Listo para Tu Préstamo?</h2>
+        <p>Comienza hoy mismo y obtén el dinero que necesitas de forma rápida</p>
+        <a href="javascript:void(0);" onclick="openWhatsApp()" class="btn btn-primary">Solicitar Ahora</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Préstamos Nómina. Todos los derechos reservados.</p>
+            <p>Préstamos de nómina confiables y seguros en México | En colaboración con Consupago</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" onclick="openWhatsApp()">
+        <div class="whatsapp-tooltip">¡Escríbenos por WhatsApp!</div>
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0C7.164 0 0 7.163 0 16c0 2.825.736 5.578 2.137 7.996L.05 31.95l8.135-2.051C10.566 31.273 13.25 32 16 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm0 29.333c-2.467 0-4.867-.667-6.967-1.933l-.5-.3-5.2 1.3 1.367-4.933-.333-.533C2.733 20.8 2 18.433 2 16 2 8.28 8.28 2 16 2s14 6.28 14 14-6.28 13.333-14 13.333z"/>
+            <path d="M23.534 19.467c-.4-.2-2.367-1.167-2.734-1.3-.366-.134-.633-.2-.9.2-.266.4-1.033 1.3-1.266 1.567-.234.266-.467.3-.867.1-.4-.2-1.7-.633-3.233-2-.2-.167-3.8-3.467-4.2-4.267-.1-.2-.017-.317.083-.433.084-.1.2-.267.3-.4.1-.134.133-.2.2-.334.066-.133.033-.266-.017-.366-.05-.1-.9-2.167-1.233-2.967-.334-.8-.667-.667-.9-.667H7.1c-.267 0-.7.1-1.067.5-.366.4-1.4 1.367-1.4 3.333 0 1.967 1.434 3.867 1.634 4.133.2.267 2.8 4.3 6.8 6 .95.4 1.7.633 2.283.8.95.3 1.817.25 2.5.15.767-.117 2.367-.967 2.7-1.9.333-.933.333-1.733.233-1.9-.1-.167-.366-.267-.766-.467z"/>
+        </svg>
+    </div>
+
+    <script>
+        function openWhatsApp() {
+            const phoneNumber = '5215514558434';
+            const message = encodeURIComponent('¡Hola! Me interesa solicitar un préstamo de nómina. ¿Podrían darme más información?');
+            const url = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(url, '_blank');
+        }
+
+        // Smooth scroll para los enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const wasActive = faqItem.classList.contains('active');
+                
+                // Cerrar todos los FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Abrir el clickeado si no estaba activo
+                if (!wasActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.step, .requirement-card, .feature-card, .faq-item, .mv-card, .team-member').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
